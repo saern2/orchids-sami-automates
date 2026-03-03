@@ -1,0 +1,208 @@
+/* Updated: 2025-12-24T18:12:42.226Z */
+/* Updated: 2025-12-24T17:46:56.090Z */
+/* Updated: 2025-12-24T17:29:11.567Z */
+/* Updated: 2025-12-24T17:13:30.137Z */
+/* Updated: 2025-12-24T17:13:04.148Z */
+/* Updated: 2025-12-24T17:12:46.644Z */
+/* Updated: 2025-12-24T17:01:07.526Z */
+/* Updated: 2025-12-24T17:01:05.761Z */
+/* Updated: 2025-12-24T16:58:43.975Z */
+/* Updated: 2025-12-24T16:58:18.209Z */
+/* Updated: 2025-12-24T14:03:10.739Z */
+/* Updated: 2025-12-24T10:48:47.527Z */
+/* Updated: 2025-12-24T09:31:58.002Z */
+/* Updated: 2025-12-23T13:27:39.865Z */
+/* Updated: 2025-12-23T09:27:29.278Z */
+/* Updated: 2025-12-23T08:03:04.238Z */
+/* Updated: 2025-12-23T08:01:08.758Z */
+/* Updated: 2025-12-22T18:05:01.739Z */
+/* Updated: 2025-12-22T18:03:09.969Z */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --color-background: #080808;
+    --color-foreground: #F5F5F5;
+
+    --color-card: #0a0a0a;
+    --color-card-foreground: #F5F5F5;
+
+    --color-popover: #0a0a0a;
+    --color-popover-foreground: #F5F5F5;
+
+    --color-primary: #8B5CF6;
+    --color-primary-foreground: #ffffff;
+
+    --color-secondary: #60A5FA;
+    --color-secondary-foreground: #ffffff;
+
+    --color-muted: #1A1A1A;
+    --color-muted-foreground: #A1A1AA;
+
+    --color-accent: #C084FC;
+    --color-accent-foreground: #ffffff;
+
+    --color-border: rgba(255, 255, 255, 0.12);
+    --color-input: rgba(255, 255, 255, 0.08);
+    --color-ring: #8B5CF6;
+
+    --color-chart-1: #8B5CF6;
+    --color-chart-2: #60A5FA;
+    --color-chart-3: #C084FC;
+    --color-chart-4: #93C5FD;
+    --color-chart-5: #0a0a0a;
+
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-sm: 8px;
+
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Montserrat", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+    --color-brand-purple: #8B5CF6;
+    --color-brand-blue: #60A5FA;
+    --color-brand-glow: #C084FC;
+    --color-dim-text: #A1A1AA;
+  }
+
+  @layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    :root {
+      --background: #0a0a0a;
+      --foreground: #F5F5F5;
+      --card: #121212;
+      --card-foreground: #F5F5F5;
+      --popover: #0a0a0a;
+      --popover-foreground: #F5F5F5;
+      --primary: #8B5CF6;
+      --primary-foreground: #ffffff;
+      --secondary: #60A5FA;
+      --secondary-foreground: #ffffff;
+      --muted: #1A1A1A;
+      --muted-foreground: #A1A1AA;
+      --accent: #C084FC;
+      --accent-foreground: #ffffff;
+      --border: rgba(255, 255, 255, 0.1);
+      --input: rgba(255, 255, 255, 0.05);
+      --ring: #8B5CF6;
+      --radius: 1.5rem;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+      body {
+        background-color: #050505;
+        background-image: 
+          radial-gradient(circle at 10% 10%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
+          radial-gradient(circle at 90% 90%, rgba(96, 165, 250, 0.15) 0%, transparent 40%),
+          radial-gradient(circle at 50% 10%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+        color: var(--foreground);
+        font-family: var(--font-sans);
+        line-height: 1.6;
+        background-attachment: fixed;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-display);
+        font-weight: 700;
+        letter-spacing: -0.04em;
+      }
+
+      .container {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        max-width: 1400px;
+      }
+
+      .section-spacing {
+        @apply py-12 md:py-20;
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .glass-card:hover {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.15);
+        transform: translateY(-4px);
+      }
+
+        .bg-gradient-purple {
+          background: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(192, 132, 252, 0.05) 100%);
+          position: relative;
+        }
+    
+        .bg-gradient-blue {
+          background: linear-gradient(135deg, rgba(96, 165, 250, 0.12) 0%, rgba(147, 197, 253, 0.05) 100%);
+          position: relative;
+        }
+  
+        .bg-gradient-cyan {
+          background: linear-gradient(135deg, rgba(6, 182, 212, 0.12) 0%, rgba(34, 211, 238, 0.05) 100%);
+          position: relative;
+        }
+  
+        .bg-gradient-indigo {
+          background: linear-gradient(135deg, rgba(79, 70, 229, 0.12) 0%, rgba(99, 102, 241, 0.05) 100%);
+          position: relative;
+        }
+  
+        .bg-gradient-slate {
+          background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+          position: relative;
+        }
+
+        /* Dot Pattern overlay for sections */
+        .section-pattern::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+          background-size: 40px 40px;
+          pointer-events: none;
+          z-index: 0;
+        }
+
+      .bg-gradient-dark {
+        background: linear-gradient(180deg, #050505 0%, #0a0a0a 100%);
+      }
+
+    .text-gradient {
+      background: linear-gradient(90deg, #A855F7, #60A5FA);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+  }
+
