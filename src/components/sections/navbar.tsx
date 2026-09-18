@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,9 +35,12 @@ const Navbar = () => {
                   className="brand-logo w-nav-brand flex items-center shrink-0" 
                   aria-label="home"
                 >
-                    <img 
-                      src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Sami-automates-logo-1-1766487732151.png?width=8000&height=8000&resize=contain" 
-                      alt="Sami Automates" 
+                    <Image
+                      src="/logo.png"
+                      alt="Sami Automates"
+                      width={792}
+                      height={285}
+                      priority
                       className="h-10 md:h-14 w-auto object-contain transition-all"
                     />
                 </a>

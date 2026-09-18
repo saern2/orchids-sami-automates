@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Linkedin, Twitter, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
@@ -15,9 +16,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
             <div className="col-span-1 lg:col-span-1">
                 <div className="flex items-center gap-3 mb-8">
-                  <img 
-                    src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Sami-automates-logo-1-1766487732151.png?width=8000&height=8000&resize=contain" 
-                    alt="Sami Automates" 
+                  <Image
+                    src="/logo.png"
+                    alt="Sami Automates"
+                    width={792}
+                    height={285}
                     className="h-32 w-auto object-contain"
                   />
                 </div>
