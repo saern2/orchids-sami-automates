@@ -115,21 +115,6 @@ const HeroSection: React.FC = () => {
             </a>
           </motion.div>
         </motion.div>
-
-        {/* Floating Metrics */}
-        <div className="mt-32 grid grid-cols-2 md:grid-cols-4 gap-12 w-full max-w-[1000px]">
-          {[
-            { label: "Lead Capture", value: "24/7" },
-            { label: "Efficiency", value: "10x" },
-            { label: "Automation", value: "100%" },
-            { label: "Setup Time", value: "<1m" }
-          ].map((metric, i) => (
-            <div key={i} className="flex flex-col items-center">
-              <span className="text-3xl md:text-5xl font-black text-white mb-2">{metric.value}</span>
-              <span className="text-xs md:text-sm uppercase tracking-widest text-dim-text font-bold">{metric.label}</span>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

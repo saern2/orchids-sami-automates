@@ -36,9 +36,16 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-8">Navigation</h4>
             <ul className="space-y-4">
-              {['Home', 'Services', 'Methodology', 'Recent Work', 'Pricing', 'Blog'].map((item) => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase()}`} className="text-[15px] font-medium hover:text-white transition-colors">{item}</a>
+              {[
+                { label: 'Home', href: '/' },
+                { label: 'How It Works', href: '#how-it-works' },
+                { label: 'Services', href: '#services' },
+                { label: 'Portfolio', href: '#portfolio' },
+                { label: 'About', href: '#about' },
+                { label: 'Contact', href: '#contact' }
+              ].map((item) => (
+                <li key={item.label}>
+                  <a href={item.href} className="text-[15px] font-medium hover:text-white transition-colors">{item.label}</a>
                 </li>
               ))}
             </ul>
@@ -56,12 +63,8 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-8">Headquarters</h4>
+            <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-8">Contact</h4>
             <div className="space-y-6">
-               <div>
-                  <div className="text-white font-bold text-sm mb-1">Global HQ</div>
-                  <p className="text-[14px]">Silicon Valley, CA<br />United States</p>
-               </div>
                  <div>
                     <div className="text-white font-bold text-sm mb-1">Contact</div>
                     <p className="text-[14px]">samiautomates@gmail.com</p>
@@ -73,11 +76,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 opacity-50">
           <div className="text-[13px] font-bold tracking-tight mb-4 md:mb-0">
-            © 2024 Sami Automates | Redefining Efficiency via Autonomy
-          </div>
-          <div className="flex gap-8 text-[13px] font-bold">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            © {new Date().getFullYear()} Sami Automates | Redefining Efficiency via Autonomy
           </div>
         </div>
       </div>

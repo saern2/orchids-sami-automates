@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Zap } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const FinalCTASection = () => {
   return (
@@ -16,11 +16,6 @@ const FinalCTASection = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white font-bold text-sm uppercase tracking-widest mb-10">
-            <Zap className="w-4 h-4 text-secondary fill-secondary" />
-            Limited Availability for Q1
-          </div>
-
           <h2 className="text-4xl md:text-7xl font-black text-white leading-[1.05] mb-10">
             Ready to Get Your <br />
             <span className="text-white underline decoration-secondary decoration-4 underline-offset-8">Life Back?</span>
@@ -38,9 +33,6 @@ const FinalCTASection = () => {
               Book Your Free Audit
               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </a>
-            <p className="text-white/40 font-bold italic">
-              *Only 3 spots remaining for this month
-            </p>
           </div>
         </motion.div>
       </div>

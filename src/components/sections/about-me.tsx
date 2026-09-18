@@ -17,7 +17,7 @@ const AboutMe = () => {
           >
             <div className="relative w-full aspect-square rounded-[40px] overflow-hidden border border-white/10 shadow-2xl">
               <Image 
-                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974"
+                src="/sami.png"
                 alt="Sami Automates Founder"
                 fill
                 className="object-cover"
@@ -48,16 +48,6 @@ const AboutMe = () => {
               <p>
                 Our mission is to empower ambitious entrepreneurs and enterprises with the tools they need to achieve complete autonomy. By combining cutting-edge LLMs with bespoke workflow blueprints, we turn complex challenges into automated victories.
               </p>
-              <div className="pt-8 grid grid-cols-2 gap-8 border-t border-white/5">
-                <div>
-                  <div className="text-3xl font-black text-white mb-2">50+</div>
-                  <div className="text-xs font-bold uppercase tracking-widest text-dim-text">Agents Deployed</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-black text-white mb-2">95%</div>
-                  <div className="text-xs font-bold uppercase tracking-widest text-dim-text">Efficiency Gain</div>
-                </div>
-              </div>
             </div>
           </motion.div>
         </div>
