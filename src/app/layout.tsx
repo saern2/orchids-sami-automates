@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,9 +17,28 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
+const title = "Sami Automates";
+const description =
+  "Sami Automates builds AI agents and workflow automations for lead generation, sales and operations.";
+
 export const metadata: Metadata = {
-  title: "Sami Automates | Premier AI Workflow Automation Agency",
-  description: "Achieving 10x efficiency gains through autonomous AI systems and custom workflow automation.",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: title,
+    title,
+    description,
+    images: [{ url: "/logo.png", width: 792, height: 285, alt: "Sami Automates" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({
