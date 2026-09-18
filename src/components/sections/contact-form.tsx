@@ -9,7 +9,8 @@ const ContactFormSection = () => {
     name: "",
     email: "",
     phone: "",
-    message: ""
+    message: "",
+    website: ""
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -22,7 +23,7 @@ const ContactFormSection = () => {
     setStatus("loading");
 
     try {
-      const response = await fetch("https://n8n.srv861058.hstgr.cloud/webhook/emails", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,7 +33,7 @@ const ContactFormSection = () => {
 
       if (response.ok) {
         setStatus("success");
-        setFormData({ name: "", email: "", phone: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", message: "", website: "" });
       } else {
         setStatus("error");
       }
@@ -82,6 +83,19 @@ const ContactFormSection = () => {
                 className="grid grid-cols-1 md:grid-cols-2 gap-6" 
                 onSubmit={handleSubmit}
               >
+                {/* Honeypot: hidden from people, filled by bots, dropped by the API */}
+                <div className="absolute -left-[9999px] top-0 h-px w-px overflow-hidden" aria-hidden="true">
+                  <label htmlFor="website">Website</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={formData.website}
+                    onChange={handleChange}
+                  />
+                </div>
                 <div className="space-y-2">
                   <label className="text-xs font-black tracking-widest text-[#A1A1AA] uppercase" htmlFor="name">Full Name</label>
                   <div className="relative group">
@@ -130,7 +144,6 @@ const ContactFormSection = () => {
                       type="tel"
                       id="phone"
                       name="phone"
-                      required
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+1 (555) 000-0000"
