@@ -14,7 +14,8 @@ const HeroSection: React.FC = () => {
   const pauseTime = 2000;
 
   useEffect(() => {
-    let timer: NodeJS.Timeout;
+    let timer: ReturnType<typeof setTimeout>;
+    let pauseTimer: ReturnType<typeof setTimeout> | undefined;
     const currentWord = words[wordIndex];
 
     if (isDeleting) {
@@ -29,12 +30,15 @@ const HeroSection: React.FC = () => {
       timer = setTimeout(() => {
         setTypedText(currentWord.substring(0, typedText.length + 1));
         if (typedText === currentWord) {
-          setTimeout(() => setIsDeleting(true), pauseTime);
+          pauseTimer = setTimeout(() => setIsDeleting(true), pauseTime);
         }
       }, typingSpeed);
     }
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      if (pauseTimer) clearTimeout(pauseTimer);
+    };
   }, [typedText, isDeleting, wordIndex]);
 
   return (
