@@ -65,6 +65,26 @@ redeploy.
   that order.
 - Deleting a project also deletes its uploaded files under `media/projects/<slug>/`.
 
+## Keeping Supabase awake
+
+Free Supabase projects pause after 7 days without API traffic. The public page is cached
+(one-hour entries plus tag revalidation on every admin save), so a quiet week can pass
+without the site itself touching Supabase. Give the operator's n8n a heartbeat:
+
+1. **Schedule trigger**: every 2 days.
+2. **HTTP Request** node: `GET {NEXT_PUBLIC_SUPABASE_URL}/rest/v1/site_settings?select=key&limit=1`
+   with two headers, `apikey: <anon key>` and `Authorization: Bearer <anon key>`.
+
+The anon key is public by design (it ships in the page bundle and RLS limits it to
+published rows), so storing it in n8n is safe. If the page ever renders without work
+examples or the trust-strip Fiverr line, the database was unreachable; the page still
+returns 200 and heals itself within an hour once Supabase answers again.
+
+## Deploying changes
+
+A push to `main` is enough: Hostinger rebuilds and restarts the app automatically. No
+hPanel changes were needed for Round 3.
+
 ## Contact form
 
 The browser posts to `POST /api/contact`. The route validates with zod (name 2–100,
