@@ -18,26 +18,26 @@ const IntroSection = () => {
           <div className="absolute top-0 left-0 w-full h-full bg-primary/5 blur-[120px] pointer-events-none" />
           
           <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-bold tracking-widest uppercase">
-            Start Automating in Record Time
+            What you get
           </div>
           
           <h2 className="text-4xl md:text-6xl font-black text-white leading-tight mb-8">
-            Transforming Complex Workflows into <span className="text-gradient">Simple Success</span>
+            Your phone gets answered. Your calendar fills up. <span className="text-gradient">You stay on the job.</span>
           </h2>
           
           <div className="text-xl md:text-2xl font-medium text-white/80 mb-12 leading-relaxed max-w-4xl mx-auto">
-            Sami Automates is your partner in the AI revolution. We specialize in building autonomous systems that handle the heavy lifting, so you can focus on growth.
+            Missed calls are lost customers. An AI calling agent picks up on the first ring, answers the usual questions, books the appointment and sends you the details.
           </div>
           
           <p className="max-w-4xl mx-auto text-lg text-white/60 leading-relaxed mb-16">
-            From intelligent voice agents that sound like real humans to complex lead capture pipelines that never sleep, we provide a complete ecosystem for business autonomy. Achieving 10x efficiency isn't just a goal—it's what we deliver every day.
+            Everything is built around how your business already works: your calendar, your CRM, your opening hours and the way you talk to customers. You approve the script and hear it before it goes live.
           </p>
 
           <a 
             href="#contact" 
             className="inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white bg-transparent border border-white/20 rounded-full transition-all duration-300 hover:bg-white hover:text-black hover:scale-105"
           >
-            Start Your Transformation
+            Tell me about your business
           </a>
         </motion.div>
       </div>

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const HeroSection: React.FC = () => {
   const [typedText, setTypedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const words = ["AI Chatbots", "AI Calling Agents", "Lead Capture Systems", "Appointment Booking"];
+  const words = ["AI calling agents", "automatic booking", "instant follow-ups", "n8n workflows"];
   const [wordIndex, setWordIndex] = useState(0);
   
   const typingSpeed = 100;
@@ -63,14 +63,14 @@ const HeroSection: React.FC = () => {
                     transition={{ delay: 0.2 }}
                     className="text-primary font-bold tracking-[0.2em] uppercase text-xs sm:text-sm mb-6 block"
                   >
-                    For business owners who plan to upscale their business with efficient workflows
+                    For businesses that cannot afford to miss a call
                   </motion.span>
                   <h1 
                     className="text-[36px] md:text-[64px] lg:text-[85px] font-black tracking-tighter leading-[1.1] text-center mb-10"
                     style={{ fontFamily: 'var(--font-display)' }}
                   >
-                    <span className="text-white block">12x your revenue and retain</span> 
-                    <span className="text-white block">40Hrs per week with smarter</span>
+                    <span className="text-white block">Every call answered.</span> 
+                    <span className="text-white block">Every booking made, with</span>
                     <div className="mt-6 md:mt-8">
                         <span 
                           style={{ 
@@ -93,7 +93,7 @@ const HeroSection: React.FC = () => {
                   transition={{ delay: 0.6, duration: 1 }}
                   className="text-[20px] md:text-[24px] font-medium text-white/70 mb-14 max-w-[900px] mx-auto leading-relaxed"
                 >
-                  We build smart AI automation tailored to your business which maximize revenue and minimise workload
+                  Sami builds AI calling agents and automations that answer your phone, qualify the caller and book them straight into your calendar. Day, night and weekends.
                 </motion.p>
 
 
@@ -108,14 +108,14 @@ const HeroSection: React.FC = () => {
               className="inline-block bg-primary hover:bg-accent text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(139,92,246,0.3)]"
               style={{ fontSize: '17px' }}
             >
-              Start Your Journey
+              Book a free call
             </a>
             <a 
               href="#services" 
               className="inline-block bg-white/5 hover:bg-white/10 text-white font-bold py-4 px-10 rounded-full border border-white/10 transition-all duration-300"
               style={{ fontSize: '17px' }}
             >
-              Learn More
+              See how it works
             </a>
           </motion.div>
         </motion.div>

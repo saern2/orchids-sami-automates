@@ -2,15 +2,15 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Building2, ShoppingBag, Stethoscope, Scale, Home, GraduationCap } from 'lucide-react';
+import { Stethoscope, Scale, Home, Wrench, Smile, Scissors } from 'lucide-react';
 
 const industries = [
-  { name: "Real Estate", icon: <Home className="w-8 h-8" />, color: "text-blue-400" },
-  { name: "E-commerce", icon: <ShoppingBag className="w-8 h-8" />, color: "text-purple-400" },
-  { name: "Healthcare", icon: <Stethoscope className="w-8 h-8" />, color: "text-red-400" },
-  { name: "Law Firms", icon: <Scale className="w-8 h-8" />, color: "text-amber-400" },
-  { name: "Education", icon: <GraduationCap className="w-8 h-8" />, color: "text-green-400" },
-  { name: "SaaS & Tech", icon: <Building2 className="w-8 h-8" />, color: "text-indigo-400" }
+  { name: "Medical clinics", icon: <Stethoscope className="w-8 h-8" />, color: "text-red-400" },
+  { name: "Real estate", icon: <Home className="w-8 h-8" />, color: "text-blue-400" },
+  { name: "Home services", icon: <Wrench className="w-8 h-8" />, color: "text-amber-400" },
+  { name: "Law firms", icon: <Scale className="w-8 h-8" />, color: "text-purple-400" },
+  { name: "Dental practices", icon: <Smile className="w-8 h-8" />, color: "text-green-400" },
+  { name: "Salons and spas", icon: <Scissors className="w-8 h-8" />, color: "text-indigo-400" }
 ];
 
   const IndustriesSection = () => {
@@ -21,10 +21,10 @@ const industries = [
         <div className="flex flex-col md:flex-row items-center justify-between mb-20">
           <div className="max-w-xl text-center md:text-left mb-10 md:mb-0">
             <h2 className="text-3xl md:text-5xl font-black text-white mb-6">
-              Industries <span className="text-gradient">We've Transformed</span>
+              Built for businesses that <span className="text-gradient">live on the phone</span>
             </h2>
             <p className="text-white/50 text-lg leading-relaxed">
-              AI isn't one-size-fits-all. We build industry-specific agents that internalize your business logic and speak your customers' language fluently.
+              Clinics, agencies and trades lose bookings every day to voicemail. These are the businesses I build for.
             </p>
           </div>
           <div className="flex -space-x-4 opacity-50">

@@ -71,7 +71,7 @@ const Navbar = () => {
                 fontFamily: 'var(--font-display)',
               }}
             >
-              Book Free Consultation
+              Book a free call
             </a>
 
             {/* Mobile Menu Button */}
@@ -118,7 +118,7 @@ const Navbar = () => {
               className="mt-4 bg-primary text-white px-8 py-4 rounded-full text-lg font-bold shadow-[0_0_20px_rgba(139,92,246,0.3)]"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              Book Consultation
+              Book a free call
             </a>
           </nav>
         </div>

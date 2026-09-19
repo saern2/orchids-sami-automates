@@ -6,23 +6,23 @@ import { MousePointer2, Zap, CheckCircle, BarChart3 } from 'lucide-react';
 
 const steps = [
   {
-    title: "Select Your Agent",
-    description: "Choose from our pre-built AI agents or custom-build one tailored to your specific business needs.",
+    title: "A 20-minute call",
+    description: "You tell me how calls and bookings are handled today and where they slip through.",
     icon: <MousePointer2 className="w-6 h-6 text-primary" />,
   },
   {
-    title: "Connect Your Tools",
-    description: "Seamlessly integrate with your existing CRM, calendar, and communication channels in one click.",
+    title: "I build it",
+    description: "A calling agent on Vapi plus an n8n workflow wired to your calendar and CRM.",
     icon: <Zap className="w-6 h-6 text-secondary" />,
   },
   {
-    title: "Launch & Automate",
-    description: "Go live in minutes. Your AI agents start handling leads and booking appointments immediately.",
+    title: "We test it together",
+    description: "You call it, we adjust the script and the rules until it sounds right for your customers.",
     icon: <CheckCircle className="w-6 h-6 text-accent" />,
   },
   {
-    title: "Scale Efficiency",
-    description: "Monitor performance through real-time analytics and scale your operations with 10x ROI.",
+    title: "Go live",
+    description: "It answers, books and follows up. You get a summary of every call in your inbox.",
     icon: <BarChart3 className="w-6 h-6 text-primary" />,
   },
 ];
@@ -33,10 +33,10 @@ const HowItWorks = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            Get Started in <span className="text-gradient">Under a Minute</span>
+            How it <span className="text-gradient">works</span>
           </h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            Our streamlined process ensures you can start capturing leads and booking appointments without the technical headache.
+            Four steps. Most of the work is mine.
           </p>
         </div>
 

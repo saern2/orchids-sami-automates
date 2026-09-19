@@ -18,7 +18,7 @@ const AboutMe = () => {
             <div className="relative w-full aspect-square rounded-[40px] overflow-hidden border border-white/10 shadow-2xl">
               <Image 
                 src="/sami.png"
-                alt="Sami Automates Founder"
+                alt="Sami Memon, founder of Sami Automates"
                 fill
                 className="object-cover"
               />
@@ -36,17 +36,17 @@ const AboutMe = () => {
             className="lg:w-1/2"
           >
             <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-bold tracking-widest uppercase">
-              Meet the Visionary
+              About Sami
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-white mb-8 leading-tight">
-              Driven by <span className="text-gradient">Innovation</span>, Guided by Results
+              I build it, I test it, and <span className="text-gradient">I answer when you call.</span>
             </h2>
             <div className="space-y-6 text-white/70 text-lg leading-relaxed">
               <p>
-                At Sami Automates, we believe the future of business isn't just about AI—it's about how we integrate that intelligence into the DNA of every operation.
+                I'm Sami Memon, a computer science graduate (Khalifa University, 2021). I build AI calling agents on Vapi and automations in n8n for businesses that need calls answered and appointments booked without adding staff.
               </p>
               <p>
-                Our mission is to empower ambitious entrepreneurs and enterprises with the tools they need to achieve complete autonomy. By combining cutting-edge LLMs with bespoke workflow blueprints, we turn complex challenges into automated victories.
+                On Fiverr I'm a Level 2 seller with a 4.9 rating from 61 reviews, and I've built calling systems for a medical practice (Elite VCM) and a US real estate company (USA BUYS LAND). You deal with me directly, from the first call to go-live.
               </p>
             </div>
           </motion.div>

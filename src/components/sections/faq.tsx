@@ -6,24 +6,28 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const faqData = [
   {
-    question: "How long until we see the 10x efficiency gains?",
-    answer: "Most enterprises start seeing measurable efficiency improvements within 4-6 weeks of deployment. Our 'Wide Research' phase ensures we target the highest impact areas first for immediate ROI."
+    question: "Will it sound like a robot?",
+    answer: "No. You choose the voice, we write the script together, and you hear it before it goes live. Callers can always ask for a person and the agent will hand over."
   },
   {
-    question: "Do your autonomous agents integrate with legacy software?",
-    answer: "Yes. Our systems are designed to bridge the gap between legacy infrastructure and modern AI intelligence. We use multi-format intelligence to read and interact with existing data without requiring a full system overhaul."
+    question: "What happens when it can't answer a question?",
+    answer: "It takes a message, books a callback or transfers the call, whichever you prefer. Either way you get a summary of the call."
   },
   {
-    question: "What is the 'Wide Research' methodology?",
-    answer: "It is our proprietary deep-dive audit process. We map out your entire business logic, identifying hidden bottlenecks and parallel processing opportunities that standard automation tools miss."
+    question: "What does it connect to?",
+    answer: "Google Calendar, Calendly, HubSpot, Airtable, Google Sheets, WhatsApp, Gmail and most tools with an API, through n8n. If you use something else, ask."
   },
   {
-    question: "Is our data secure during the automation process?",
-    answer: "Security is built into our core. We implement enterprise-grade encryption and can deploy agents within your private cloud environment to ensure data never leaves your secure perimeter."
+    question: "How long until it's live?",
+    answer: "It depends on how many tools and rules are involved. You get a go-live date on the free call, before any work starts."
   },
   {
-    question: "Can these agents handle complex decision-making?",
-    answer: "Absolutely. We build 'Adaptive AI Agents' that follow your specific business logic and heuristics. They don't just follow static paths; they analyze context and make informed decisions within your pre-defined guardrails."
+    question: "What does it cost?",
+    answer: "It depends on what you need. Book the free call, tell me how things work today, and I'll give you a fixed price before any work starts."
+  },
+  {
+    question: "Is my customers' data safe?",
+    answer: "Calls and bookings stay in the tools you already use. I don't keep copies, and my access is removed when the project is handed over."
   }
 ];
 
@@ -70,17 +74,17 @@ export default function FAQ() {
           {/* Left Side */}
           <div className="flex flex-col">
             <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-bold tracking-widest uppercase self-start">
-              Knowledge Base
+              Questions
             </div>
             <h2 className="text-[48px] md:text-[64px] font-extrabold text-white leading-[1] mb-8 tracking-tighter" style={{ fontFamily: 'var(--font-display)' }}>
               Frequently Asked <span className="text-gradient">Questions</span>
             </h2>
             <p className="text-[#A1A1AA] text-lg mb-12 max-w-[500px]">
-              Everything you need to know about the transition to an autonomous business model.
+              Straight answers before you book a call.
             </p>
             
               <div className="mt-auto p-10 rounded-[32px] bg-white/[0.02] border border-white/5">
-                <p className="text-sm font-bold text-white mb-2">Still curious?</p>
+                <p className="text-sm font-bold text-white mb-2">Something else?</p>
                 <a 
                   href="mailto:samiautomates@gmail.com" 
                   className="text-primary text-[18px] font-bold border-b-2 border-primary/20 hover:border-primary transition-all pb-1"

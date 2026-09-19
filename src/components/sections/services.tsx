@@ -2,63 +2,38 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  MessageSquare, 
-  PhoneCall, 
-  UserPlus, 
-  Calendar, 
-  Workflow, 
-  Zap, 
-  BrainCircuit, 
-  ShieldCheck, 
-  LineChart 
-} from 'lucide-react';
+import { MessageSquare, PhoneCall, UserPlus, Calendar, Workflow, Zap } from 'lucide-react';
 
 const servicesData = [
   {
-    title: 'AI Chatbots',
-    description: 'Intelligent conversational agents that handle customer queries, qualify leads, and provide 24/7 support across all platforms.',
-    icon: <MessageSquare className="w-8 h-8 text-primary" />,
+    title: 'AI calling agents',
+    description: 'Answers every inbound call, handles the usual questions and books the appointment while the caller is still on the line.',
+    icon: <PhoneCall className="w-8 h-8 text-primary" />,
   },
   {
-    title: 'AI Calling Agents',
-    description: 'Autonomous voice systems capable of making and receiving calls, handling appointments, and conducting follow-ups with human-like naturality.',
-    icon: <PhoneCall className="w-8 h-8 text-secondary" />,
+    title: 'Follow-up calls',
+    description: 'Calls back missed leads, confirms appointments and reminds no-shows, so nobody falls through the cracks.',
+    icon: <Zap className="w-8 h-8 text-secondary" />,
   },
   {
-    title: 'Lead Capture Systems',
-    description: 'End-to-end automation for identifying, capturing, and nurturing leads directly into your CRM without human intervention.',
-    icon: <UserPlus className="w-8 h-8 text-accent" />,
+    title: 'Appointment booking',
+    description: 'Books straight into Google Calendar, Calendly or your CRM and sends the confirmation to the customer.',
+    icon: <Calendar className="w-8 h-8 text-accent" />,
   },
   {
-    title: 'Appointment Booking',
-    description: 'Automated scheduling systems that sync with your team\'s calendar to book meetings and consultations around the clock.',
-    icon: <Calendar className="w-8 h-8 text-primary" />,
+    title: 'Lead capture and CRM sync',
+    description: 'Every caller and form fill lands in your CRM with notes on what they asked for. No retyping.',
+    icon: <UserPlus className="w-8 h-8 text-primary" />,
   },
   {
-    title: 'Custom AI Workflows',
-    description: 'Bespoke automation blueprints tailored to your specific business logic, connecting all your favorite tools.',
-    icon: <Workflow className="w-8 h-8 text-secondary" />,
+    title: 'Website and WhatsApp chatbots',
+    description: 'Answers questions and takes bookings in chat, 24 hours a day, in the tone you would use yourself.',
+    icon: <MessageSquare className="w-8 h-8 text-secondary" />,
   },
   {
-    title: 'Rapid Deployment',
-    description: 'Get your AI infrastructure up and running in record time. Most systems deployed in under 24 hours.',
-    icon: <Zap className="w-8 h-8 text-accent" />,
-  },
-  {
-    title: 'Intelligent Adaptation',
-    description: 'AI agents that learn from every interaction, constantly improving their performance and accuracy for your business.',
-    icon: <BrainCircuit className="w-8 h-8 text-primary" />,
-  },
-  {
-    title: 'Secure Data Pipelines',
-    description: 'Enterprise-grade security ensuring all customer interactions and business data remain private and protected.',
-    icon: <ShieldCheck className="w-8 h-8 text-secondary" />,
-  },
-  {
-    title: 'ROI Analytics',
-    description: 'Real-time dashboards demonstrating the performance and efficiency gains achieved through your automated systems.',
-    icon: <LineChart className="w-8 h-8 text-accent" />,
+    title: 'Custom n8n workflows',
+    description: 'Any repeated task between your tools, automated and monitored, from invoices to reminders.',
+    icon: <Workflow className="w-8 h-8 text-accent" />,
   },
 ];
 
@@ -68,10 +43,10 @@ const Services = () => {
         <div className="container mx-auto px-6">
           <div className="text-center md:text-left mb-20 max-w-3xl mx-auto md:mx-0">
             <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-8">
-              Our <span className="text-gradient">Core Capabilities</span>
+              What I <span className="text-gradient">build</span>
             </h2>
             <p className="text-lg text-white/60 leading-relaxed">
-              Sami Automates provides the tools you need to dominate your industry. We don't just build scripts; we design intelligent systems that think, adapt, and scale.
+              Only the pieces that get a customer from "calling" to "booked".
             </p>
           </div>
 

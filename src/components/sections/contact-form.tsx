@@ -52,13 +52,13 @@ const ContactFormSection = () => {
           <div className="relative z-10 w-full lg:w-1/2">
             <div className="mb-12">
                <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-bold tracking-widest uppercase">
-                Collaboration
+                Get in touch
               </div>
               <h2 className="mb-6 font-display text-[48px] md:text-[64px] font-extrabold tracking-tighter text-white leading-none">
-                Design Your <br /><span className="text-gradient">Autonomy</span>
+                Tell me about <br /><span className="text-gradient">your business</span>
               </h2>
               <p className="font-sans text-[18px] md:text-[20px] leading-[1.6] text-[#A1A1AA] max-w-[500px]">
-                Discover the power of a custom AI workflow that puts you 10x ahead. Talk directly with our automation architects.
+                Three fields, no forms to fill in later. I reply within 24 hours with what I would build for you.
               </p>
             </div>
 
@@ -67,15 +67,15 @@ const ContactFormSection = () => {
                 <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 text-primary mb-6">
                   <CheckCircle2 size={40} />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">Message Received!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Got it.</h3>
                 <p className="text-[#A1A1AA] mb-8">
-                  Our architects are reviewing your request. We'll be in touch within 24 hours to schedule your strategy session.
+                  I'll reply within 24 hours with what I would build and what it would cost.
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
                   className="px-8 py-3 rounded-full bg-white/5 hover:bg-white/10 text-white font-bold transition-colors"
                 >
-                  Send Another Message
+                  Send another message
                 </button>
               </div>
             ) : (
@@ -97,7 +97,7 @@ const ContactFormSection = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-black tracking-widest text-[#A1A1AA] uppercase" htmlFor="name">Full Name</label>
+                  <label className="text-xs font-black tracking-widest text-[#A1A1AA] uppercase" htmlFor="name">Your name</label>
                   <div className="relative group">
                     <div className="absolute inset-y-0 left-4 flex items-center text-[#A1A1AA] group-focus-within:text-primary transition-colors">
                       <User size={18} />
@@ -109,14 +109,14 @@ const ContactFormSection = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="Sami Automates"
+                      placeholder="Sami Memon"
                       className="w-full rounded-2xl border border-white/10 bg-white/[0.03] py-4 pl-12 pr-4 text-white font-bold outline-none focus:border-primary/50 transition-all"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-black tracking-widest text-[#A1A1AA] uppercase" htmlFor="email">Work Email</label>
+                  <label className="text-xs font-black tracking-widest text-[#A1A1AA] uppercase" htmlFor="email">Email</label>
                   <div className="relative group">
                     <div className="absolute inset-y-0 left-4 flex items-center text-[#A1A1AA] group-focus-within:text-primary transition-colors">
                       <Mail size={18} />
@@ -128,14 +128,14 @@ const ContactFormSection = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="hi@enterprise.com"
+                      placeholder="you@company.com"
                       className="w-full rounded-2xl border border-white/10 bg-white/[0.03] py-4 pl-12 pr-4 text-white font-bold outline-none focus:border-primary/50 transition-all"
                     />
                   </div>
                 </div>
 
                 <div className="md:col-span-2 space-y-2">
-                  <label className="text-xs font-black tracking-widest text-[#A1A1AA] uppercase" htmlFor="phone">Phone Number</label>
+                  <label className="text-xs font-black tracking-widest text-[#A1A1AA] uppercase" htmlFor="phone">Phone (optional)</label>
                   <div className="relative group">
                     <div className="absolute inset-y-0 left-4 flex items-center text-[#A1A1AA] group-focus-within:text-primary transition-colors">
                       <Phone size={18} />
@@ -146,14 +146,14 @@ const ContactFormSection = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+1 (555) 000-0000"
+                      placeholder="+1 555 000 0000"
                       className="w-full rounded-2xl border border-white/10 bg-white/[0.03] py-4 pl-12 pr-4 text-white font-bold outline-none focus:border-primary/50 transition-all"
                     />
                   </div>
                 </div>
 
                 <div className="md:col-span-2 space-y-2">
-                  <label className="text-xs font-black tracking-widest text-[#A1A1AA] uppercase" htmlFor="message">Message</label>
+                  <label className="text-xs font-black tracking-widest text-[#A1A1AA] uppercase" htmlFor="message">What do you want handled?</label>
                   <div className="relative group">
                     <div className="absolute left-4 top-4 text-[#A1A1AA] group-focus-within:text-primary transition-colors">
                       <MessageSquare size={18} />
@@ -164,7 +164,7 @@ const ContactFormSection = () => {
                       required
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Tell us about the complex processes you want to automate..."
+                      placeholder="Calls, bookings, follow-ups. Tell me what slips through today."
                       rows={4}
                       className="w-full resize-none rounded-2xl border border-white/10 bg-white/[0.03] py-4 pl-12 pr-4 text-white font-bold outline-none focus:border-primary/50 transition-all"
                     />
@@ -173,7 +173,7 @@ const ContactFormSection = () => {
 
                 {status === "error" && (
                   <div className="md:col-span-2 text-red-400 text-sm font-bold bg-red-400/10 py-3 px-4 rounded-xl border border-red-400/20">
-                    Something went wrong. Please try again or contact us directly.
+                    Something went wrong. Try again, or email samiautomates@gmail.com.
                   </div>
                 )}
 
@@ -188,10 +188,10 @@ const ContactFormSection = () => {
                       {status === "loading" ? (
                         <>
                           <Loader2 className="w-6 h-6 animate-spin" />
-                          Processing...
+                          Sending...
                         </>
                       ) : (
-                        "Book Call With Architects"
+                        "Send message"
                       )}
                     </span>
                   </button>

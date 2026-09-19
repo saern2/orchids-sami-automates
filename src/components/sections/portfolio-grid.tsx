@@ -47,7 +47,7 @@ const PortfolioCard = ({ project, onClick }: { project: Project; onClick: () => 
 
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-[4px]">
           <div className="bg-white text-black px-8 py-3 rounded-2xl font-black text-sm flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-            View Case Study <ArrowRight size={16} />
+            See details <ArrowRight size={16} />
           </div>
         </div>
       </div>
@@ -125,7 +125,7 @@ const ProjectDetailsModal = ({ project, isOpen, onClose }: { project: Project | 
                 <div className="grid grid-cols-1 gap-12">
                   <section className="space-y-6">
                     <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-purple-500 flex items-center gap-3">
-                      <Zap size={14} /> The Strategic Challenge
+                      <Zap size={14} /> What was built
                     </h3>
                     {paragraphs(project.body).map((text, i) => (
                       <p key={i} className="text-xl md:text-2xl text-white/90 leading-snug font-medium">
@@ -136,7 +136,7 @@ const ProjectDetailsModal = ({ project, isOpen, onClose }: { project: Project | 
 
                   <section className="space-y-8">
                     <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-purple-500 flex items-center gap-3">
-                      <LayoutGrid size={14} /> Solution Architecture
+                      <LayoutGrid size={14} /> What it does
                     </h3>
                     <div className="space-y-4">
                       {project.features.map((feature, i) => (
@@ -150,7 +150,7 @@ const ProjectDetailsModal = ({ project, isOpen, onClose }: { project: Project | 
 
                   <section className="space-y-8">
                     <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-purple-500 flex items-center gap-3">
-                      <BarChart3 size={14} /> Quantifiable Impact
+                      <BarChart3 size={14} /> Results
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {project.results.map((item, i) => (
@@ -183,7 +183,7 @@ const ProjectDetailsModal = ({ project, isOpen, onClose }: { project: Project | 
                     </div>
 
                     <Button asChild className="w-full bg-white hover:bg-gray-100 text-black h-20 font-black rounded-2xl shadow-xl transition-all hover:scale-[1.02]">
-                      <a href="#contact" onClick={onClose}>Initiate Strategy Session</a>
+                      <a href="#contact" onClick={onClose}>Get something like this</a>
                     </Button>
                   </section>
                 </div>
@@ -214,7 +214,7 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
               className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10"
             >
               <div className="w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.5)] animate-pulse" />
-              <span className="text-[10px] font-black text-purple-400 uppercase tracking-[0.4em]">Strategic Deployments</span>
+              <span className="text-[10px] font-black text-purple-400 uppercase tracking-[0.4em]">Recent work</span>
             </motion.div>
 
             <motion.h2
@@ -223,7 +223,7 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
               viewport={{ once: true }}
               className="text-6xl md:text-8xl lg:text-[10rem] font-black text-white tracking-tighter leading-[0.8]"
             >
-              Proven <br /> <span className="text-purple-500">Excellence.</span>
+              Built and <br /> <span className="text-purple-500">shipped.</span>
             </motion.h2>
 
             <motion.p
@@ -233,7 +233,7 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
               transition={{ delay: 0.1 }}
               className="text-xl md:text-3xl text-white/40 font-medium leading-tight max-w-2xl"
             >
-              Architecting autonomous AI systems that redefine operational efficiency and deliver measurable business outcomes.
+              Real systems for real businesses. Open any card to see what it does.
             </motion.p>
           </div>
         </div>

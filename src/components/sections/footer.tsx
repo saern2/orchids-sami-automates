@@ -25,7 +25,7 @@ const Footer = () => {
                   />
                 </div>
             <p className="text-[15px] leading-relaxed mb-8 max-w-[300px]">
-              Premier AI Workflow Automation Agency achieving 10x efficiency gains through autonomous systems.
+              AI calling agents and automations for businesses that cannot afford to miss a call.
             </p>
             <div className="flex items-center gap-4">
                {socialLinks.map(({ Icon, href }, i) => (
@@ -55,9 +55,9 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-8">Capabilities</h4>
+            <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-8">What I build</h4>
             <ul className="space-y-4">
-              {['End-to-End Autonomy', 'AI Agent Design', 'Parallel Systems', 'Workflow Integration', 'Intelligence Outputs'].map((item) => (
+              {['AI calling agents', 'Appointment booking', 'Lead follow-up', 'Chatbots', 'n8n workflows'].map((item) => (
                 <li key={item}>
                   <a href="#services" className="text-[15px] font-medium hover:text-white transition-colors">{item}</a>
                 </li>
@@ -79,7 +79,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 opacity-50">
           <div className="text-[13px] font-bold tracking-tight mb-4 md:mb-0">
-            © {new Date().getFullYear()} Sami Automates | Redefining Efficiency via Autonomy
+            © {new Date().getFullYear()} Sami Automates
           </div>
         </div>
       </div>

@@ -17,12 +17,12 @@ const FinalCTASection = () => {
           className="max-w-4xl mx-auto"
         >
           <h2 className="text-4xl md:text-7xl font-black text-white leading-[1.05] mb-10">
-            Ready to Get Your <br />
-            <span className="text-white underline decoration-secondary decoration-4 underline-offset-8">Life Back?</span>
+            Ready to stop <br />
+            <span className="text-white underline decoration-secondary decoration-4 underline-offset-8">missing calls?</span>
           </h2>
 
           <p className="text-xl md:text-2xl text-white/70 font-medium mb-12 leading-relaxed">
-            Stop trading your time for repetitive tasks. Let Sami Automates install the autonomous infrastructure your business deserves.
+            Book a free 20-minute call. Tell me how calls and bookings work today, and I'll tell you what I would build and what it would cost.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -30,7 +30,7 @@ const FinalCTASection = () => {
               href="#contact" 
               className="group flex items-center gap-3 bg-white text-black font-black py-5 px-12 rounded-full text-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]"
             >
-              Book Your Free Audit
+              Book my free call
               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
