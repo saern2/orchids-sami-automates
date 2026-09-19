@@ -57,10 +57,18 @@ async function seedSettings(): Promise<void> {
   if (error) throw error;
   const existing = new Map((existingRows ?? []).map((r) => [r.key as string, r.value]));
 
+  // jsonb reorders object keys, so compare canonical (key-sorted) forms.
+  const canonical = (v: unknown): string =>
+    JSON.stringify(v, (_k, val) =>
+      val && typeof val === "object" && !Array.isArray(val)
+        ? Object.fromEntries(Object.keys(val as object).sort().map((k) => [k, (val as Record<string, unknown>)[k]]))
+        : val,
+    );
+
   let changed = 0;
   let unchanged = 0;
   for (const seed of settingSeeds) {
-    if (existing.has(seed.key) && JSON.stringify(existing.get(seed.key)) === JSON.stringify(seed.value)) {
+    if (existing.has(seed.key) && canonical(existing.get(seed.key)) === canonical(seed.value)) {
       unchanged += 1;
       continue;
     }
