@@ -1,8 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 import { Linkedin, Twitter, MessageCircle } from 'lucide-react';
+import type { ContactSetting } from '@/lib/types';
 
-const Footer = () => {
+const Footer = ({ contact }: { contact: ContactSetting | null }) => {
   const socialLinks = [
     { Icon: Twitter, href: "https://x.com/MemonSamiullah4" },
     { Icon: Linkedin, href: "https://www.linkedin.com/in/samiullahmemon-956393209" },
@@ -70,7 +71,9 @@ const Footer = () => {
             <div className="space-y-6">
                  <div>
                     <div className="text-white font-bold text-sm mb-1">Contact</div>
-                    <p className="text-[14px]">samiautomates@gmail.com</p>
+                    {contact?.email && (
+                      <a href={`mailto:${contact.email}`} className="text-[14px] hover:text-white transition-colors">{contact.email}</a>
+                    )}
                  </div>
             </div>
           </div>

@@ -3,8 +3,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import type { FiverrSetting } from '@/lib/types';
 
-const AboutMe = () => {
+const AboutMe = ({ fiverr }: { fiverr: FiverrSetting | null }) => {
   return (
     <section id="about" className="bg-gradient-dark section-spacing border-t border-white/5 relative overflow-hidden section-pattern">
       <div className="container mx-auto px-6">
@@ -45,9 +46,11 @@ const AboutMe = () => {
               <p>
                 I'm Sami Memon, a computer science graduate (Khalifa University, 2021). I build AI calling agents on Vapi and automations in n8n for businesses that need calls answered and appointments booked without adding staff.
               </p>
-              <p>
-                On Fiverr I'm a Level 2 seller with a 4.9 rating from 61 reviews, and I've built calling systems for a medical practice (Elite VCM) and a US real estate company (USA BUYS LAND). You deal with me directly, from the first call to go-live.
-              </p>
+              {fiverr && (
+                <p>
+                  On Fiverr I'm a {fiverr.level} seller with a {fiverr.rating} rating from {fiverr.reviews} reviews, and I've built calling systems for a medical practice (Elite VCM) and a US real estate company (USA BUYS LAND). You deal with me directly, from the first call to go-live.
+                </p>
+              )}
             </div>
           </motion.div>
         </div>

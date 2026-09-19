@@ -64,7 +64,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }: { question: string, answ
   );
 };
 
-export default function FAQ() {
+export default function FAQ({ email }: { email: string | null }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
@@ -82,16 +82,14 @@ export default function FAQ() {
             <p className="text-[#A1A1AA] text-lg mb-12 max-w-[500px]">
               Straight answers before you book a call.
             </p>
-            
-              <div className="mt-auto p-10 rounded-[32px] bg-white/[0.02] border border-white/5">
-                <p className="text-sm font-bold text-white mb-2">Something else?</p>
-                <a 
-                  href="mailto:samiautomates@gmail.com" 
-                  className="text-primary text-[18px] font-bold border-b-2 border-primary/20 hover:border-primary transition-all pb-1"
-                >
-                  samiautomates@gmail.com
-                </a>
-              </div>
+              {email && (
+                <div className="mt-auto p-10 rounded-[32px] bg-white/[0.02] border border-white/5">
+                  <p className="text-sm font-bold text-white mb-2">Something else?</p>
+                  <a href={`mailto:${email}`} className="text-primary text-[18px] font-bold border-b-2 border-primary/20 hover:border-primary transition-all pb-1">
+                    {email}
+                  </a>
+                </div>
+              )}
           </div>
 
           {/* Right Side */}

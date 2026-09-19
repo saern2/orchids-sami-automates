@@ -10,8 +10,11 @@ import FAQ from "@/components/sections/faq";
 import FinalCTASection from "@/components/sections/cta-final";
 import ContactFormSection from "@/components/sections/contact-form";
 import Footer from "@/components/sections/footer";
+import { getSetting } from "@/lib/content";
 
-export default function Home() {
+export default async function Home() {
+  const [fiverr, contact] = await Promise.all([getSetting("fiverr"), getSetting("contact")]);
+
   return (
     <div className="flex flex-col min-h-screen bg-black">
       <Navbar />
@@ -22,12 +25,12 @@ export default function Home() {
         <Services />
         <PortfolioSection />
         <IndustriesSection />
-        <AboutMe />
-        <FAQ />
+        <AboutMe fiverr={fiverr} />
+        <FAQ email={contact?.email ?? null} />
         <FinalCTASection />
         <ContactFormSection />
       </main>
-      <Footer />
+      <Footer contact={contact} />
     </div>
   );
 }
