@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import type { FiverrSetting } from '@/lib/types';
+import HeroDemo from './hero-demo';
 
 const HeroSection = ({ fiverr }: { fiverr: FiverrSetting | null }) => {
   const [typedText, setTypedText] = useState('');
@@ -45,18 +46,18 @@ const HeroSection = ({ fiverr }: { fiverr: FiverrSetting | null }) => {
   return (
     <section 
       id="home" 
-        className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-gradient-dark pt-[100px] md:pt-[120px] pb-16 section-pattern"
+        className="relative min-h-screen flex flex-col justify-center px-6 overflow-hidden bg-gradient-dark pt-[110px] md:pt-[130px] pb-16 lg:pb-20 section-pattern"
     >
-      {/* Background Glows */}
-      <div className="absolute top-[10%] right-[-5%] w-[800px] h-[800px] bg-primary/20 rounded-full blur-[160px] pointer-events-none animate-pulse" />
-      <div className="absolute bottom-[10%] left-[-5%] w-[700px] h-[700px] bg-secondary/20 rounded-full blur-[180px] pointer-events-none animate-pulse delay-700" />
+      {/* Background glows (static; the demo card carries the motion) */}
+      <div className="absolute top-[5%] right-[-10%] w-[700px] h-[700px] bg-primary/15 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-[0%] left-[-10%] w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[180px] pointer-events-none" />
 
-      <div className="container relative z-10 flex flex-col items-center">
+      <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] gap-14 lg:gap-12 items-center">
             <motion.div 
-                initial={{ opacity: 0, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1 }}
-                className="max-w-[1300px] w-full text-center"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="w-full text-center lg:text-left"
               >
                   <motion.span
                     initial={{ opacity: 0, y: 10 }}
@@ -67,12 +68,13 @@ const HeroSection = ({ fiverr }: { fiverr: FiverrSetting | null }) => {
                     For businesses that lose customers to voicemail and slow follow-up
                   </motion.span>
                   <h1 
-                    className="text-[36px] md:text-[64px] lg:text-[85px] font-black tracking-tighter leading-[1.1] text-center mb-10"
+                    className="text-[36px] sm:text-[46px] md:text-[56px] lg:text-[48px] xl:text-[56px] 2xl:text-[62px] font-black tracking-tighter leading-[1.06] mb-8"
                     style={{ fontFamily: 'var(--font-display)' }}
                   >
-                    <span className="text-white block">Calls answered. Leads followed up.</span> 
-                    <span className="text-white block">Bookings made, with</span>
-                    <div className="mt-6 md:mt-8">
+                    <span className="text-white lg:block">Calls answered. </span>
+                    <span className="text-white lg:block">Leads followed up. </span>
+                    <span className="text-white lg:block lg:whitespace-nowrap">Bookings made, with</span>
+                    <div className="mt-2 md:mt-3 min-h-[1.15em] text-[0.88em] leading-[1.1]">
                         <span 
                           style={{ 
                             background: 'linear-gradient(to right, #A855F7, #60A5FA)',
@@ -84,7 +86,7 @@ const HeroSection = ({ fiverr }: { fiverr: FiverrSetting | null }) => {
                         >
                           {typedText}
                         </span>
-                      <span className="w-[3px] h-[40px] md:h-[60px] lg:h-[80px] bg-primary ml-4 animate-pulse inline-block align-middle" />
+                      <span className="w-[3px] h-[0.9em] bg-primary ml-3 animate-pulse inline-block align-middle" />
                     </div>
                   </h1>
 
@@ -92,7 +94,7 @@ const HeroSection = ({ fiverr }: { fiverr: FiverrSetting | null }) => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.6, duration: 1 }}
-                  className="text-[20px] md:text-[24px] font-medium text-white/70 mb-14 max-w-[900px] mx-auto leading-relaxed"
+                  className="text-[18px] md:text-[21px] font-medium text-white/70 mb-10 max-w-[640px] mx-auto lg:mx-0 leading-relaxed"
                 >
                   Sami Automates builds AI calling agents, chatbots and automations that pick up the phone, qualify every lead and book the appointment, then keep your CRM up to date. Day, night and weekends.
                 </motion.p>
@@ -102,7 +104,7 @@ const HeroSection = ({ fiverr }: { fiverr: FiverrSetting | null }) => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-6 justify-center"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center lg:justify-start"
           >
             <a 
               href="#contact" 
@@ -125,10 +127,10 @@ const HeroSection = ({ fiverr }: { fiverr: FiverrSetting | null }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-y-3 sm:gap-y-0 text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-dim-text"
+            className="mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-y-3 sm:gap-y-2 text-[11px] font-bold uppercase tracking-[0.18em] text-dim-text"
           >
             {fiverr && (
-              <li className="sm:px-6 sm:border-r sm:border-white/15">
+              <li className="sm:pr-5 sm:mr-5 sm:border-r sm:border-white/15">
                 <a
                   href={fiverr.profile_url}
                   target="_blank"
@@ -139,9 +141,18 @@ const HeroSection = ({ fiverr }: { fiverr: FiverrSetting | null }) => {
                 </a>
               </li>
             )}
-            <li className="sm:px-6 sm:border-r sm:border-white/15 text-center">Calling systems live for Elite VCM and USA BUYS LAND</li>
-            <li className="sm:px-6">Built on Vapi, Retell and n8n</li>
+            <li className="sm:pr-5 sm:mr-5 sm:border-r sm:border-white/15 text-center">Calling systems live for Elite VCM and USA BUYS LAND</li>
+            <li>Built on Vapi, Retell and n8n</li>
           </motion.ul>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
+          className="w-[calc(100%+1.5rem)] -mx-3 sm:w-full sm:mx-0 lg:justify-self-end"
+        >
+          <HeroDemo />
         </motion.div>
       </div>
     </section>

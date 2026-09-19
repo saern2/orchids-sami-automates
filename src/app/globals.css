@@ -187,3 +187,29 @@
     }
   }
 
+
+/* ---- Hero demo: looping call → booking illustration (CSS only) ---- */
+.demo-card { contain: layout paint; }
+.demo-live { animation: demo-blink 1.6s ease-in-out infinite; }
+@keyframes demo-blink { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
+.demo-bubble { max-width: 88%; border-radius: 16px; padding: 9px 13px; font-size: 13px; line-height: 1.45; }
+.demo-bubble-caller { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.85); border-bottom-left-radius: 6px; }
+.demo-bubble-agent { background: rgba(139,92,246,0.18); color: #fff; border: 1px solid rgba(139,92,246,0.35); margin-left: auto; border-bottom-right-radius: 6px; }
+.demo-step { opacity: 0; transform: translateY(6px); animation-duration: 14s; animation-timing-function: ease-out; animation-iteration-count: infinite; animation-fill-mode: both; }
+.demo-step-1 { animation-name: demo-step-1; }
+@keyframes demo-step-1 { 0% { opacity: 0; transform: translateY(6px); } 2.14% { opacity: 0; transform: translateY(6px); } 5.71% { opacity: 1; transform: translateY(0); } 92.86% { opacity: 1; transform: translateY(0); } 97.14% { opacity: 0; transform: translateY(0); } 100% { opacity: 0; transform: translateY(0); } }
+.demo-step-2 { animation-name: demo-step-2; }
+@keyframes demo-step-2 { 0% { opacity: 0; transform: translateY(6px); } 15.71% { opacity: 0; transform: translateY(6px); } 19.29% { opacity: 1; transform: translateY(0); } 92.86% { opacity: 1; transform: translateY(0); } 97.14% { opacity: 0; transform: translateY(0); } 100% { opacity: 0; transform: translateY(0); } }
+.demo-step-3 { animation-name: demo-step-3; }
+@keyframes demo-step-3 { 0% { opacity: 0; transform: translateY(6px); } 28.57% { opacity: 0; transform: translateY(6px); } 32.14% { opacity: 1; transform: translateY(0); } 92.86% { opacity: 1; transform: translateY(0); } 97.14% { opacity: 0; transform: translateY(0); } 100% { opacity: 0; transform: translateY(0); } }
+.demo-step-4 { animation-name: demo-step-4; }
+@keyframes demo-step-4 { 0% { opacity: 0; transform: translateY(6px); } 42.86% { opacity: 0; transform: translateY(6px); } 46.43% { opacity: 1; transform: translateY(0); } 92.86% { opacity: 1; transform: translateY(0); } 97.14% { opacity: 0; transform: translateY(0); } 100% { opacity: 0; transform: translateY(0); } }
+.demo-step-5 { animation-name: demo-step-5; }
+@keyframes demo-step-5 { 0% { opacity: 0; transform: translateY(6px); } 54.29% { opacity: 0; transform: translateY(6px); } 57.86% { opacity: 1; transform: translateY(0); } 92.86% { opacity: 1; transform: translateY(0); } 97.14% { opacity: 0; transform: translateY(0); } 100% { opacity: 0; transform: translateY(0); } }
+.demo-step-6 { animation-name: demo-step-6; }
+@keyframes demo-step-6 { 0% { opacity: 0; transform: translateY(6px); } 67.14% { opacity: 0; transform: translateY(6px); } 70.71% { opacity: 1; transform: translateY(0); } 92.86% { opacity: 1; transform: translateY(0); } 97.14% { opacity: 0; transform: translateY(0); } 100% { opacity: 0; transform: translateY(0); } }
+.demo-step-7 { animation-name: demo-step-7; }
+@keyframes demo-step-7 { 0% { opacity: 0; transform: translateY(6px); } 75.71% { opacity: 0; transform: translateY(6px); } 79.29% { opacity: 1; transform: translateY(0); } 92.86% { opacity: 1; transform: translateY(0); } 97.14% { opacity: 0; transform: translateY(0); } 100% { opacity: 0; transform: translateY(0); } }
+.demo-answered-late { opacity: 0; animation: demo-answered 14s ease-out infinite both; }
+@keyframes demo-answered { 0%,10.00% { opacity: 0; } 13.57% { opacity: 1; } 92.86% { opacity: 1; } 97.14%,100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .demo-step, .demo-answered-late, .demo-live { animation: none !important; opacity: 1 !important; transform: none !important; } }
