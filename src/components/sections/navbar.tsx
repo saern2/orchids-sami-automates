@@ -8,9 +8,9 @@ const Navbar = () => {
 
     const navLinks = [
       { label: 'Home', href: '/' },
-      { label: 'How It Works', href: '#how-it-works' },
+      { label: 'How it works', href: '#how-it-works' },
       { label: 'Services', href: '#services' },
-      { label: 'Portfolio', href: '#portfolio' },
+      { label: 'Work', href: '#portfolio' },
       { label: 'About', href: '#about' }
     ];
 

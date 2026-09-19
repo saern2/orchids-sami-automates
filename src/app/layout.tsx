@@ -19,7 +19,7 @@ const montserrat = Montserrat({
 
 const title = "Sami Automates";
 const description =
-  "AI calling agents and n8n automations that answer calls, book appointments and follow up with leads for small and mid-sized businesses.";
+  "Sami Automates builds AI calling agents, chatbots and n8n automations that answer calls, follow up leads and book appointments for growing businesses.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

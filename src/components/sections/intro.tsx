@@ -26,18 +26,18 @@ const IntroSection = () => {
           </h2>
           
           <div className="text-xl md:text-2xl font-medium text-white/80 mb-12 leading-relaxed max-w-4xl mx-auto">
-            Missed calls are lost customers. An AI calling agent picks up on the first ring, answers the usual questions, books the appointment and sends you the details.
+            A missed call is usually a lost customer. An AI agent picks up on the first ring, answers the usual questions, books the appointment and sends you the details. The same systems follow up on leads, confirm bookings and keep your CRM current.
           </div>
           
           <p className="max-w-4xl mx-auto text-lg text-white/60 leading-relaxed mb-16">
-            Everything is built around how your business already works: your calendar, your CRM, your opening hours and the way you talk to customers. You approve the script and hear it before it goes live.
+            Everything is built around how your business already works: your calendar, your CRM, your opening hours and the way you speak to customers. You approve the script and hear it before it goes live.
           </p>
 
           <a 
             href="#contact" 
             className="inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white bg-transparent border border-white/20 rounded-full transition-all duration-300 hover:bg-white hover:text-black hover:scale-105"
           >
-            Tell me about your business
+            Tell us about your business
           </a>
         </motion.div>
       </div>

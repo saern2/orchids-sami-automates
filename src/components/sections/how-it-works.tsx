@@ -7,12 +7,12 @@ import { MousePointer2, Zap, CheckCircle, BarChart3 } from 'lucide-react';
 const steps = [
   {
     title: "A 20-minute call",
-    description: "You tell me how calls and bookings are handled today and where they slip through.",
+    description: "You tell us how calls, leads and bookings are handled today and where they slip through.",
     icon: <MousePointer2 className="w-6 h-6 text-primary" />,
   },
   {
-    title: "I build it",
-    description: "A calling agent on Vapi plus an n8n workflow wired to your calendar and CRM.",
+    title: "We build it",
+    description: "A calling agent on Vapi, a chatbot, or an n8n workflow wired to your calendar and CRM. You get a fixed price and a go-live date before any work starts.",
     icon: <Zap className="w-6 h-6 text-secondary" />,
   },
   {
@@ -22,7 +22,7 @@ const steps = [
   },
   {
     title: "Go live",
-    description: "It answers, books and follows up. You get a summary of every call in your inbox.",
+    description: "It answers, books and follows up. Every call and conversation is logged where you can see it.",
     icon: <BarChart3 className="w-6 h-6 text-primary" />,
   },
 ];
@@ -36,7 +36,7 @@ const HowItWorks = () => {
             How it <span className="text-gradient">works</span>
           </h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            Four steps. Most of the work is mine.
+            Four steps from first call to live system. No technical work on your side.
           </p>
         </div>
 

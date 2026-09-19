@@ -233,7 +233,7 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
               transition={{ delay: 0.1 }}
               className="text-xl md:text-3xl text-white/40 font-medium leading-tight max-w-2xl"
             >
-              Real systems for real businesses. Open any card to see what it does.
+              Real systems for real clients. Open any one to see what it does and what it connects to.
             </motion.p>
           </div>
         </div>

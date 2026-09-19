@@ -24,7 +24,7 @@ const industries = [
               Built for businesses that <span className="text-gradient">live on the phone</span>
             </h2>
             <p className="text-white/50 text-lg leading-relaxed">
-              Clinics, agencies and trades lose bookings every day to voicemail. These are the businesses I build for.
+              Clinics, agencies and trades lose bookings every day to voicemail and slow replies. This is the kind of business these systems are built for.
             </p>
           </div>
           <div className="flex -space-x-4 opacity-50">

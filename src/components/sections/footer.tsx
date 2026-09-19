@@ -42,9 +42,9 @@ const Footer = ({ contact }: { contact: ContactSetting | null }) => {
             <ul className="space-y-4">
               {[
                 { label: 'Home', href: '/' },
-                { label: 'How It Works', href: '#how-it-works' },
+                { label: 'How it works', href: '#how-it-works' },
                 { label: 'Services', href: '#services' },
-                { label: 'Portfolio', href: '#portfolio' },
+                { label: 'Work', href: '#portfolio' },
                 { label: 'About', href: '#about' },
                 { label: 'Contact', href: '#contact' }
               ].map((item) => (
@@ -56,7 +56,7 @@ const Footer = ({ contact }: { contact: ContactSetting | null }) => {
           </div>
 
           <div>
-            <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-8">What I build</h4>
+            <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-8">What we build</h4>
             <ul className="space-y-4">
               {['AI calling agents', 'Appointment booking', 'Lead follow-up', 'Chatbots', 'n8n workflows'].map((item) => (
                 <li key={item}>

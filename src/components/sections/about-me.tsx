@@ -37,18 +37,18 @@ const AboutMe = ({ fiverr }: { fiverr: FiverrSetting | null }) => {
             className="lg:w-1/2"
           >
             <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-bold tracking-widest uppercase">
-              About Sami
+              About Sami Automates
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-white mb-8 leading-tight">
-              I build it, I test it, and <span className="text-gradient">I answer when you call.</span>
+              Direct access to the people <br /><span className="text-gradient">who build your system.</span>
             </h2>
             <div className="space-y-6 text-white/70 text-lg leading-relaxed">
               <p>
-                I'm Sami Memon, a computer science graduate (Khalifa University, 2021). I build AI calling agents on Vapi and automations in n8n for businesses that need calls answered and appointments booked without adding staff.
+                Sami Automates is run by Sami Memon, a computer science graduate (Khalifa University, 2021). We build AI calling agents on Vapi and Retell, chatbots for websites and WhatsApp, and automations in n8n for businesses that need calls answered and leads followed up without adding staff.
               </p>
               {fiverr && (
                 <p>
-                  On Fiverr I'm a {fiverr.level} seller with a {fiverr.rating} rating from {fiverr.reviews} reviews, and I've built calling systems for a medical practice (Elite VCM) and a US real estate company (USA BUYS LAND). You deal with me directly, from the first call to go-live.
+                  On Fiverr we hold a {fiverr.rating} rating from {fiverr.reviews} reviews as a {fiverr.level} seller, and we have built calling systems for a medical practice (Elite VCM) and a US real estate company (USA BUYS LAND). You deal with the people who build your system, from the first call to go-live.
                 </p>
               )}
             </div>

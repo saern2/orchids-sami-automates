@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const HeroSection: React.FC = () => {
   const [typedText, setTypedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const words = ["AI calling agents", "automatic booking", "instant follow-ups", "n8n workflows"];
+  const words = ["AI calling agents", "automated follow-ups", "chat and WhatsApp bots", "n8n workflows"];
   const [wordIndex, setWordIndex] = useState(0);
   
   const typingSpeed = 100;
@@ -63,14 +63,14 @@ const HeroSection: React.FC = () => {
                     transition={{ delay: 0.2 }}
                     className="text-primary font-bold tracking-[0.2em] uppercase text-xs sm:text-sm mb-6 block"
                   >
-                    For businesses that cannot afford to miss a call
+                    For businesses that lose customers to voicemail and slow follow-up
                   </motion.span>
                   <h1 
                     className="text-[36px] md:text-[64px] lg:text-[85px] font-black tracking-tighter leading-[1.1] text-center mb-10"
                     style={{ fontFamily: 'var(--font-display)' }}
                   >
-                    <span className="text-white block">Every call answered.</span> 
-                    <span className="text-white block">Every booking made, with</span>
+                    <span className="text-white block">Calls answered. Leads followed up.</span> 
+                    <span className="text-white block">Bookings made, with</span>
                     <div className="mt-6 md:mt-8">
                         <span 
                           style={{ 
@@ -93,7 +93,7 @@ const HeroSection: React.FC = () => {
                   transition={{ delay: 0.6, duration: 1 }}
                   className="text-[20px] md:text-[24px] font-medium text-white/70 mb-14 max-w-[900px] mx-auto leading-relaxed"
                 >
-                  Sami builds AI calling agents and automations that answer your phone, qualify the caller and book them straight into your calendar. Day, night and weekends.
+                  Sami Automates builds AI calling agents, chatbots and automations that pick up the phone, qualify every lead and book the appointment, then keep your CRM up to date. Day, night and weekends.
                 </motion.p>
 
 
@@ -115,7 +115,7 @@ const HeroSection: React.FC = () => {
               className="inline-block bg-white/5 hover:bg-white/10 text-white font-bold py-4 px-10 rounded-full border border-white/10 transition-all duration-300"
               style={{ fontSize: '17px' }}
             >
-              See how it works
+              See what we build
             </a>
           </motion.div>
         </motion.div>

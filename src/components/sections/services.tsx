@@ -7,32 +7,32 @@ import { MessageSquare, PhoneCall, UserPlus, Calendar, Workflow, Zap } from 'luc
 const servicesData = [
   {
     title: 'AI calling agents',
-    description: 'Answers every inbound call, handles the usual questions and books the appointment while the caller is still on the line.',
+    description: 'Answer every inbound call, handle the usual questions and book the appointment while the caller is still on the line.',
     icon: <PhoneCall className="w-8 h-8 text-primary" />,
   },
   {
     title: 'Follow-up calls',
-    description: 'Calls back missed leads, confirms appointments and reminds no-shows, so nobody falls through the cracks.',
+    description: 'Call back missed leads, confirm appointments and remind no-shows, so nobody falls through the cracks.',
     icon: <Zap className="w-8 h-8 text-secondary" />,
   },
   {
     title: 'Appointment booking',
-    description: 'Books straight into Google Calendar, Calendly or your CRM and sends the confirmation to the customer.',
+    description: 'Book straight into Google Calendar, Calendly or your CRM and send the confirmation to the customer.',
     icon: <Calendar className="w-8 h-8 text-accent" />,
   },
   {
     title: 'Lead capture and CRM sync',
-    description: 'Every caller and form fill lands in your CRM with notes on what they asked for. No retyping.',
+    description: 'Every caller, form fill and chat lands in your CRM with notes on what they asked for. No retyping.',
     icon: <UserPlus className="w-8 h-8 text-primary" />,
   },
   {
     title: 'Website and WhatsApp chatbots',
-    description: 'Answers questions and takes bookings in chat, 24 hours a day, in the tone you would use yourself.',
+    description: 'Answer questions and take bookings in chat, 24 hours a day, in the tone you would use yourself.',
     icon: <MessageSquare className="w-8 h-8 text-secondary" />,
   },
   {
     title: 'Custom n8n workflows',
-    description: 'Any repeated task between your tools, automated and monitored, from invoices to reminders.',
+    description: 'Any repeated task between your tools, automated and monitored: lead research, outreach, invoices, reminders, reports.',
     icon: <Workflow className="w-8 h-8 text-accent" />,
   },
 ];
@@ -43,10 +43,10 @@ const Services = () => {
         <div className="container mx-auto px-6">
           <div className="text-center md:text-left mb-20 max-w-3xl mx-auto md:mx-0">
             <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-8">
-              What I <span className="text-gradient">build</span>
+              What we <span className="text-gradient">build</span>
             </h2>
             <p className="text-lg text-white/60 leading-relaxed">
-              Only the pieces that get a customer from "calling" to "booked".
+              Six things, done well. Each one connects to the tools you already use.
             </p>
           </div>
 

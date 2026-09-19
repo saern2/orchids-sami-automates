@@ -7,11 +7,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 const faqData = [
   {
     question: "Will it sound like a robot?",
-    answer: "No. You choose the voice, we write the script together, and you hear it before it goes live. Callers can always ask for a person and the agent will hand over."
+    answer: "No. You choose the voice, we write the script together, and you hear it before it goes live. Callers can ask for a person at any time and the agent hands the call over."
   },
   {
     question: "What happens when it can't answer a question?",
-    answer: "It takes a message, books a callback or transfers the call, whichever you prefer. Either way you get a summary of the call."
+    answer: "It takes a message, books a callback or transfers the call, whichever you prefer. Either way the call is logged and you get a summary."
   },
   {
     question: "What does it connect to?",
@@ -23,11 +23,11 @@ const faqData = [
   },
   {
     question: "What does it cost?",
-    answer: "It depends on what you need. Book the free call, tell me how things work today, and I'll give you a fixed price before any work starts."
+    answer: "It depends on what you need. Book the free call, tell us how things work today, and you get a fixed price before any work starts."
   },
   {
-    question: "Is my customers' data safe?",
-    answer: "Calls and bookings stay in the tools you already use. I don't keep copies, and my access is removed when the project is handed over."
+    question: "Is our customer data safe?",
+    answer: "Everything runs inside your own accounts and tools. Calls, bookings and customer details stay where they are today, and you control who has access."
   }
 ];
 
@@ -77,10 +77,10 @@ export default function FAQ({ email }: { email: string | null }) {
               Questions
             </div>
             <h2 className="text-[48px] md:text-[64px] font-extrabold text-white leading-[1] mb-8 tracking-tighter" style={{ fontFamily: 'var(--font-display)' }}>
-              Frequently Asked <span className="text-gradient">Questions</span>
+              Frequently asked <br /><span className="text-gradient">questions</span>
             </h2>
             <p className="text-[#A1A1AA] text-lg mb-12 max-w-[500px]">
-              Straight answers before you book a call.
+              Short answers to the things people ask before they book a call.
             </p>
               {email && (
                 <div className="mt-auto p-10 rounded-[32px] bg-white/[0.02] border border-white/5">

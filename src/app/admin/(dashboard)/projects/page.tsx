@@ -72,7 +72,7 @@ export default async function AdminProjectsPage({
                   <div className="text-[11px] text-[#A1A1AA] font-normal">{p.slug}</div>
                 </TableCell>
                 <TableCell className="text-white/80">
-                  {p.client_name ?? <span className="text-[#A1A1AA]">—</span>}
+                  {p.client_name ?? <span className="text-[#A1A1AA]">none</span>}
                   {p.client_name && !p.client_public && (
                     <span className="ml-2 text-[10px] uppercase tracking-widest text-[#A1A1AA]">private</span>
                   )}

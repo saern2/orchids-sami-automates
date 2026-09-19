@@ -52,13 +52,13 @@ const ContactFormSection = () => {
           <div className="relative z-10 w-full lg:w-1/2">
             <div className="mb-12">
                <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-bold tracking-widest uppercase">
-                Get in touch
+                Get started
               </div>
               <h2 className="mb-6 font-display text-[48px] md:text-[64px] font-extrabold tracking-tighter text-white leading-none">
-                Tell me about <br /><span className="text-gradient">your business</span>
+                Tell us about <br /><span className="text-gradient">your business</span>
               </h2>
               <p className="font-sans text-[18px] md:text-[20px] leading-[1.6] text-[#A1A1AA] max-w-[500px]">
-                Three fields, no forms to fill in later. I reply within 24 hours with what I would build for you.
+                Three short fields. We reply within 24 hours with what we would build for you.
               </p>
             </div>
 
@@ -69,7 +69,7 @@ const ContactFormSection = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">Got it.</h3>
                 <p className="text-[#A1A1AA] mb-8">
-                  I'll reply within 24 hours with what I would build and what it would cost.
+                  We will reply within 24 hours with what we would build and what it would cost.
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
@@ -164,7 +164,7 @@ const ContactFormSection = () => {
                       required
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Calls, bookings, follow-ups. Tell me what slips through today."
+                      placeholder="Calls, bookings, follow-ups. Tell us what slips through today."
                       rows={4}
                       className="w-full resize-none rounded-2xl border border-white/10 bg-white/[0.03] py-4 pl-12 pr-4 text-white font-bold outline-none focus:border-primary/50 transition-all"
                     />
@@ -173,7 +173,7 @@ const ContactFormSection = () => {
 
                 {status === "error" && (
                   <div className="md:col-span-2 text-red-400 text-sm font-bold bg-red-400/10 py-3 px-4 rounded-xl border border-red-400/20">
-                    Something went wrong. Try again, or email samiautomates@gmail.com.
+                    Something went wrong. Please try again or email us directly.
                   </div>
                 )}
 

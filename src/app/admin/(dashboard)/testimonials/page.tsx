@@ -67,7 +67,7 @@ export default async function AdminTestimonialsPage({
                 </TableCell>
                 <TableCell className="text-white/80 max-w-md truncate">{t.quote}</TableCell>
                 <TableCell className="text-white/80">{t.source}</TableCell>
-                <TableCell className="text-right tabular-nums">{t.rating ?? "—"}</TableCell>
+                <TableCell className="text-right tabular-nums">{t.rating ?? "none"}</TableCell>
                 <TableCell>
                   <span className={`inline-block h-2.5 w-2.5 rounded-full ${t.published ? "bg-emerald-400" : "bg-white/15"}`} />
                 </TableCell>
