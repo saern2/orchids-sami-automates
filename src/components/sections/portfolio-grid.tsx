@@ -238,15 +238,21 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
-          {projects.map((project) => (
-            <PortfolioCard
-              key={project.id}
-              project={project}
-              onClick={() => setSelectedProject(project)}
-            />
-          ))}
-        </div>
+        {projects.length === 0 ? (
+          <p className="text-lg md:text-xl text-white/60 font-medium">
+            Work examples are loading. Please check back shortly.
+          </p>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
+            {projects.map((project) => (
+              <PortfolioCard
+                key={project.id}
+                project={project}
+                onClick={() => setSelectedProject(project)}
+              />
+            ))}
+          </div>
+        )}
 
         <ProjectDetailsModal
           project={selectedProject}
