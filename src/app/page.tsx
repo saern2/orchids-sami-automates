@@ -5,6 +5,7 @@ import HowItWorks from "@/components/sections/how-it-works";
 import Services from "@/components/sections/services";
 import PortfolioSection from "@/components/sections/portfolio-section";
 import IndustriesSection from "@/components/sections/industries";
+import TestimonialsSection from "@/components/sections/testimonials";
 import AboutMe from "@/components/sections/about-me";
 import FAQ from "@/components/sections/faq";
 import FinalCTASection from "@/components/sections/cta-final";
@@ -25,6 +26,7 @@ export default async function Home() {
         <Services />
         <PortfolioSection />
         <IndustriesSection />
+        <TestimonialsSection fiverr={fiverr} />
         <AboutMe fiverr={fiverr} />
         <FAQ email={contact?.email ?? null} />
         <FinalCTASection />
