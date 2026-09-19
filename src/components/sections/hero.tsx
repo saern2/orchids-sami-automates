@@ -2,8 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import type { FiverrSetting } from '@/lib/types';
 
-const HeroSection: React.FC = () => {
+const HeroSection = ({ fiverr }: { fiverr: FiverrSetting | null }) => {
   const [typedText, setTypedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const words = ["AI calling agents", "automated follow-ups", "chat and WhatsApp bots", "n8n workflows"];
@@ -118,6 +119,29 @@ const HeroSection: React.FC = () => {
               See what we build
             </a>
           </motion.div>
+
+          {/* Trust strip */}
+          <motion.ul
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-y-3 sm:gap-y-0 text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-dim-text"
+          >
+            {fiverr && (
+              <li className="sm:px-6 sm:border-r sm:border-white/15">
+                <a
+                  href={fiverr.profile_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  {fiverr.rating} from {fiverr.reviews} reviews on Fiverr
+                </a>
+              </li>
+            )}
+            <li className="sm:px-6 sm:border-r sm:border-white/15 text-center">Calling systems live for Elite VCM and USA BUYS LAND</li>
+            <li className="sm:px-6">Built on Vapi, Retell and n8n</li>
+          </motion.ul>
         </motion.div>
       </div>
     </section>

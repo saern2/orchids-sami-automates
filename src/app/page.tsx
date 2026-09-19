@@ -19,7 +19,7 @@ export default async function Home() {
     <div className="flex flex-col min-h-screen bg-black">
       <Navbar />
       <main>
-        <HeroSection />
+        <HeroSection fiverr={fiverr} />
         <IntroSection />
         <HowItWorks />
         <Services />
