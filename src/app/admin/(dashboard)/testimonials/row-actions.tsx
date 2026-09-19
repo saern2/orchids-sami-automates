@@ -77,6 +77,7 @@ export default function TestimonialRowActions({
             </Button>
             <Button
               variant="destructive"
+              className="bg-red-600 hover:bg-red-500 text-white font-bold"
               disabled={pending}
               onClick={() => {
                 run(deleteTestimonial, {});
