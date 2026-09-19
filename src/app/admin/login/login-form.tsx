@@ -12,15 +12,16 @@ export default function LoginForm({ notAllowed }: { notAllowed: boolean }) {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState<string | null>(
-    notAllowed ? "This account is not allowed to access the admin panel." : null,
-  );
+  const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
 
-  // A signed-in but non-admin user was bounced here: drop that session so the
-  // form can be used with the right account.
+  // A signed-in but non-admin user was bounced here (possibly via a soft
+  // navigation that keeps this component mounted): show why and drop that
+  // session so the form can be used with the right account.
   useEffect(() => {
     if (notAllowed) {
+      setError("This account is not allowed to access the admin panel.");
+      setPending(false);
       void createSupabaseBrowserClient().auth.signOut();
     }
   }, [notAllowed]);
