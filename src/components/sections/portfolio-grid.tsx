@@ -200,13 +200,13 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <section id="portfolio" className="bg-[#000000] py-32 md:py-48 relative overflow-hidden">
+    <section id="portfolio" className="bg-[#000000] py-20 md:py-28 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-600/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-blue-600/5 rounded-full blur-[150px] translate-y-1/2 -translate-x-1/2" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-24">
-          <div className="max-w-4xl space-y-8">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-14 md:mb-16">
+          <div className="max-w-3xl space-y-6">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -221,9 +221,9 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-6xl md:text-8xl lg:text-[10rem] font-black text-white tracking-tighter leading-[0.8]"
+              className="text-4xl md:text-5xl font-black text-white tracking-tighter leading-[1.05]"
             >
-              Built and <br /> <span className="text-purple-500">shipped.</span>
+              Built and <span className="text-gradient">shipped.</span>
             </motion.h2>
 
             <motion.p
@@ -231,7 +231,7 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl md:text-3xl text-white/40 font-medium leading-tight max-w-2xl"
+              className="text-lg text-white/60 leading-relaxed max-w-2xl"
             >
               Real systems for real clients. Open any one to see what it does and what it connects to.
             </motion.p>
