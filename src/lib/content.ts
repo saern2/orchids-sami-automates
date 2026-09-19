@@ -20,9 +20,10 @@ function anonClient() {
 }
 
 /**
- * The public page must never fail because of the database. Every read logs the
- * failure once (with its name) and falls back to an empty result; sections
- * render their own fallback for that case.
+ * The public page must never fail because of the database. The cached readers
+ * below THROW on failure so that nothing empty is ever stored in the cache; this
+ * wrapper sits outside the cache, logs once with the reader's name and returns
+ * the fallback for that one render. The next request tries the database again.
  */
 async function safely<T>(name: string, fallback: T, read: () => Promise<T>): Promise<T> {
   try {
@@ -33,62 +34,67 @@ async function safely<T>(name: string, fallback: T, read: () => Promise<T>): Pro
   }
 }
 
-export const getFeaturedProjects = unstable_cache(
-  () =>
-    safely<Project[]>("getFeaturedProjects", [], async () => {
-      const { data, error } = await anonClient()
-        .from("projects")
-        .select("*")
-        .eq("published", true)
-        .eq("featured", true)
-        .order("sort_order", { ascending: true })
-        .order("created_at", { ascending: true });
-      if (error) throw new Error(error.message);
-      return (data ?? []) as Project[];
-    }),
+const cachedFeaturedProjects = unstable_cache(
+  async (): Promise<Project[]> => {
+    const { data, error } = await anonClient()
+      .from("projects")
+      .select("*")
+      .eq("published", true)
+      .eq("featured", true)
+      .order("sort_order", { ascending: true })
+      .order("created_at", { ascending: true });
+    if (error) throw new Error(error.message);
+    return (data ?? []) as Project[];
+  },
   ["content", "featured-projects"],
   { tags: [CONTENT_TAG], revalidate: REVALIDATE_SECONDS },
 );
 
-export const getAllPublishedProjects = unstable_cache(
-  () =>
-    safely<Project[]>("getAllPublishedProjects", [], async () => {
-      const { data, error } = await anonClient()
-        .from("projects")
-        .select("*")
-        .eq("published", true)
-        .order("sort_order", { ascending: true })
-        .order("created_at", { ascending: true });
-      if (error) throw new Error(error.message);
-      return (data ?? []) as Project[];
-    }),
+const cachedPublishedProjects = unstable_cache(
+  async (): Promise<Project[]> => {
+    const { data, error } = await anonClient()
+      .from("projects")
+      .select("*")
+      .eq("published", true)
+      .order("sort_order", { ascending: true })
+      .order("created_at", { ascending: true });
+    if (error) throw new Error(error.message);
+    return (data ?? []) as Project[];
+  },
   ["content", "published-projects"],
   { tags: [CONTENT_TAG], revalidate: REVALIDATE_SECONDS },
 );
 
-export const getTestimonials = unstable_cache(
-  () =>
-    safely<Testimonial[]>("getTestimonials", [], async () => {
-      const { data, error } = await anonClient()
-        .from("testimonials")
-        .select("*")
-        .eq("published", true)
-        .order("sort_order", { ascending: true })
-        .order("created_at", { ascending: true });
-      if (error) throw new Error(error.message);
-      return (data ?? []) as Testimonial[];
-    }),
+const cachedTestimonials = unstable_cache(
+  async (): Promise<Testimonial[]> => {
+    const { data, error } = await anonClient()
+      .from("testimonials")
+      .select("*")
+      .eq("published", true)
+      .order("sort_order", { ascending: true })
+      .order("created_at", { ascending: true });
+    if (error) throw new Error(error.message);
+    return (data ?? []) as Testimonial[];
+  },
   ["content", "testimonials"],
   { tags: [CONTENT_TAG], revalidate: REVALIDATE_SECONDS },
 );
 
-export const getSetting = unstable_cache(
-  <K extends keyof SiteSettings>(key: K) =>
-    safely<SiteSettings[K] | null>(`getSetting(${key})`, null, async () => {
-      const { data, error } = await anonClient().from("site_settings").select("value").eq("key", key).maybeSingle();
-      if (error) throw new Error(error.message);
-      return (data?.value as SiteSettings[K] | undefined) ?? null;
-    }),
+const cachedSetting = unstable_cache(
+  async (key: keyof SiteSettings): Promise<unknown> => {
+    const { data, error } = await anonClient().from("site_settings").select("value").eq("key", key).maybeSingle();
+    if (error) throw new Error(error.message);
+    return data?.value ?? null;
+  },
   ["content", "setting"],
   { tags: [CONTENT_TAG], revalidate: REVALIDATE_SECONDS },
 );
+
+export const getFeaturedProjects = () => safely<Project[]>("getFeaturedProjects", [], cachedFeaturedProjects);
+
+export const getAllPublishedProjects = () => safely<Project[]>("getAllPublishedProjects", [], cachedPublishedProjects);
+
+export const getTestimonials = () => safely<Testimonial[]>("getTestimonials", [], cachedTestimonials);
+
+export const getSetting = <K extends keyof SiteSettings>(key: K) =>
+  safely<SiteSettings[K] | null>(`getSetting(${key})`, null, async () => (await cachedSetting(key)) as SiteSettings[K] | null);
